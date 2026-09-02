@@ -1,0 +1,8 @@
+node_modules/
+reports/
+bin/
+*.log
+.DS_Store
+.idea/
+.vscode/
+summary*.json

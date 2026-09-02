@@ -1,0 +1,12 @@
+{
+  "name": "k6-performance-framework",
+  "version": "1.0.0",
+  "description": "Production-style k6 performance testing framework (config-driven, data-driven, CI-ready)",
+  "private": true,
+  "scripts": {
+    "smoke": "k6 run -e ENV=dev -e SCENARIO=smoke tests/posts.test.js",
+    "load": "./run.sh -e dev -s load -t all",
+    "stress": "./run.sh -e dev -s stress -t all",
+    "load:staging": "./run.sh -e staging -s load -t all"
+  }
+}

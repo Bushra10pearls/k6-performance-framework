@@ -1,0 +1,10 @@
+{
+  "env": "dev",
+  "BASE_URL": "https://jsonplaceholder.typicode.com",
+  "AUTH_TOKEN": "dev-token-abc123",
+  "timeout": "30s",
+  "thresholds": {
+    "p95": 800,
+    "errorRate": 0.05
+  }
+}
