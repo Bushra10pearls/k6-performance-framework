@@ -1,9 +1,3 @@
-// scenarios/index.js
-// Lets every test pick its execution profile from the command line:
-//   k6 run -e SCENARIO=load   tests/posts.test.js
-//   k6 run -e SCENARIO=stress tests/posts.test.js
-//   k6 run -e SCENARIO=smoke  tests/posts.test.js   (quick 1-VU sanity check)
-
 import { loadOptions } from './load.scenario.js';
 import { stressOptions } from './stress.scenario.js';
 import { ENV_NAME } from '../helpers/config.helper.js';
@@ -26,19 +20,18 @@ const smokeOptions = {
 };
 
 const PROFILES = {
+  smoke: smokeOptions,
   load: loadOptions,
   stress: stressOptions,
-  smoke: smokeOptions,
 };
 
 export function getScenarioOptions() {
-  const name = (__ENV.SCENARIO || 'load').toLowerCase();
+  const name = (__ENV.SCENARIO || 'smoke').toLowerCase();
   const profile = PROFILES[name];
 
   if (!profile) {
-    throw new Error(
-      `Unknown SCENARIO "${name}". Valid values: ${Object.keys(PROFILES).join(', ')}`
-    );
+    throw new Error(`Unknown SCENARIO "${name}". Use smoke, load or stress.`);
   }
+
   return profile;
 }

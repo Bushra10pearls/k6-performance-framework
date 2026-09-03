@@ -1,6 +1,6 @@
 {
-  "env": "dev",
-  "BASE_URL": "https://dev-fe-rtadmin.roadtechconnect.com",
+  "env": "qa",
+  "BASE_URL": "https://qa-be-api.roadtechconnect.com",
   "APP_TYPE": "rt-app",
   "timeout": "30s",
   "thresholds": {
